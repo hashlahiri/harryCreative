@@ -1,3 +1,4 @@
+//@author C Lahiri
 package sample;
 
 import javafx.application.Application;
@@ -11,7 +12,7 @@ public class Main extends Application { //Main class which makes the stage
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Gui.fxml"));  //loads the graphical user interface file
-        primaryStage.setTitle("Chanakya - To Do List"); //header of the software
+        primaryStage.setTitle("My - To Do List"); //header of the software
         primaryStage.setScene(new Scene(root, 1200, 200));  //gives frame including height and width of the software
 
         primaryStage.show();

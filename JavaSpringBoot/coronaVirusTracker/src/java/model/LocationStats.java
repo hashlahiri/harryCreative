@@ -1,3 +1,4 @@
+//@author Chanakya Lahiri
 package com.coronavirus.coronatrack.model;
 
 public class LocationStats {

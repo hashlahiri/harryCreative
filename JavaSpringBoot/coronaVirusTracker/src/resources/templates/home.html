@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Coronavirus tracker</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1 class="display-1 d-flex justify-content-center text-light" style="background-color:#3A3A55;">CoronaVirusTracker</h1>
+		<figure class="text-center">
+  			<blockquote class="blockquote">
+    			<p>This application is responsible for realtime auto-scheduled coronavirus tracking around the globe</p>
+  			</blockquote>
+  			<figcaption class="d-flex justify-content-center blockquote-footer">
+  				<cite title="Source Title">@Chanakya Lahiri</cite>
+  			</figcaption>
+		</figure>
+		<div>
+			<h1 class="display-6 text-center">TOTAL CASES TILL DATE</h1>
+			<h1 class="text-center font-weight-bold" th:text="${totalReportedCases}"></h1>
+		</div>
+		<table class="table table-striped d-flex justify-content-center text-center">
+      		<tr>
+        		<th>Country</th>
+        		<th>State</th>
+        		<th>Total Cases Reported</th>
+        		<th>Deaths</th>
+        		<th>Recovered</th>
+        		<th>Active</th>
+      		</tr>
+      		<tr th:each="locationStat : ${locationStats}">
+        		<td th:text="${locationStat.country}"></td>
+        		<td th:text="${locationStat.state}"></td>
+        		<td th:text="${locationStat.latestTotalCases}">0</td>
+        		<td th:text="${locationStat.deaths}">0</td>
+        		<td th:text="${locationStat.recovered}">0</td>
+        		<td th:text="${locationStat.active}">0</td>
+      		</tr>
+    	</table>
+	</body>
+</html>

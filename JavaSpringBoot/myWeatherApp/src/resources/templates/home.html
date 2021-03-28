@@ -1,0 +1,41 @@
+<!-- Author @Chanakya Lahiri -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Weather Application</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1 class="display-1 d-flex justify-content-center text-light" style="background-color:#3A3A55;">My Weather Application</h1>
+		<figure class="text-center">
+  			<blockquote class="blockquote">
+    			<p>This application is responsible for realtime forecasting of weather reports around the globe</p>
+  			</blockquote>
+  			<figcaption class="d-flex justify-content-center blockquote-footer">
+  				<cite title="Source Title">@Chanakya Lahiri</cite>
+  			</figcaption>
+		</figure>
+		<img src="images/logo.png" class="img-fluid rounded mx-auto d-block" alt="responsive weather logo">
+		<table class="table table-striped d-flex justify-content-center text-center">
+      		<tr>
+      			<th>Country</th>
+        		<th>City</th>
+        		<th>Description</th>
+        		<th>Temperature (*c)</th>
+        		<th>Feels Like (*c)</th>
+        		<th>Humidity (%)</th>
+        		<th>Wind Speed (km/hr)</th>
+      		</tr>
+      		<tr>
+      			<td th:text="${currentWeather.country}"></td>
+      			<td th:text="${currentWeather.cityname}"></td>
+      			<td th:text="${currentWeather.description}"></td>
+      			<td th:text="${currentWeather.temperature}-273"></td>
+      			<td th:text="${currentWeather.feelsLike}-273"></td>
+      			<td th:text="${currentWeather.humidity}"></td>
+      			<td th:text="${currentWeather.windSpeed}"></td>
+      		</tr>
+    	</table>
+	</body>
+</html>
